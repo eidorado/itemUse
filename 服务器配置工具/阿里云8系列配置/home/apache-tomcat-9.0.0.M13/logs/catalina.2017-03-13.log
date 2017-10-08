@@ -1,0 +1,76 @@
+13-Mar-2017 01:41:29.313 WARNING [main] org.apache.tomcat.util.digester.SetPropertiesRule.begin [SetPropertiesRule]{Server/Service/Engine/Host} Setting property 'xmlValidation' to 'false' did not find a matching property.
+13-Mar-2017 01:41:29.319 WARNING [main] org.apache.tomcat.util.digester.SetPropertiesRule.begin [SetPropertiesRule]{Server/Service/Engine/Host} Setting property 'xmlNamespaceAware' to 'false' did not find a matching property.
+13-Mar-2017 01:41:29.391 WARNING [main] org.apache.tomcat.util.digester.SetPropertiesRule.begin [SetPropertiesRule]{Server/Service/Engine/Host} Setting property 'xmlValidation' to 'false' did not find a matching property.
+13-Mar-2017 01:41:29.391 WARNING [main] org.apache.tomcat.util.digester.SetPropertiesRule.begin [SetPropertiesRule]{Server/Service/Engine/Host} Setting property 'xmlNamespaceAware' to 'false' did not find a matching property.
+13-Mar-2017 01:41:29.392 WARNING [main] org.apache.tomcat.util.digester.SetPropertiesRule.begin [SetPropertiesRule]{Server/Service/Engine/Host} Setting property 'xmlValidation' to 'false' did not find a matching property.
+13-Mar-2017 01:41:29.396 WARNING [main] org.apache.tomcat.util.digester.SetPropertiesRule.begin [SetPropertiesRule]{Server/Service/Engine/Host} Setting property 'xmlNamespaceAware' to 'false' did not find a matching property.
+13-Mar-2017 01:41:29.399 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version:        Apache Tomcat/9.0.0.M13
+13-Mar-2017 01:41:29.399 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Nov 3 2016 20:59:41 UTC
+13-Mar-2017 01:41:29.400 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server number:         9.0.0.0
+13-Mar-2017 01:41:29.400 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+13-Mar-2017 01:41:29.400 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            3.10.0-327.22.2.el7.x86_64
+13-Mar-2017 01:41:29.400 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+13-Mar-2017 01:41:29.401 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /home/jdk-8u112-linux-x64/jre
+13-Mar-2017 01:41:29.401 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           1.8.0_112-b15
+13-Mar-2017 01:41:29.402 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+13-Mar-2017 01:41:29.402 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /home/apache-tomcat-9.0.0.M13
+13-Mar-2017 01:41:29.402 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /home/apache-tomcat-9.0.0.M13
+13-Mar-2017 01:41:29.402 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/home/apache-tomcat-9.0.0.M13/conf/logging.properties
+13-Mar-2017 01:41:29.403 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+13-Mar-2017 01:41:29.405 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Xms512M
+13-Mar-2017 01:41:29.406 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Xmx1024M
+13-Mar-2017 01:41:29.406 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -XX:MaxNewSize=256m
+13-Mar-2017 01:41:29.406 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.awt.headless=true
+13-Mar-2017 01:41:29.406 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+13-Mar-2017 01:41:29.407 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+13-Mar-2017 01:41:29.407 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/home/apache-tomcat-9.0.0.M13
+13-Mar-2017 01:41:29.407 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/home/apache-tomcat-9.0.0.M13
+13-Mar-2017 01:41:29.407 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/home/apache-tomcat-9.0.0.M13/temp
+13-Mar-2017 01:41:29.411 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.awt.headless=true
+13-Mar-2017 01:41:29.411 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: /usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib
+13-Mar-2017 01:41:29.698 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-80"]
+13-Mar-2017 01:41:29.735 INFO [main] org.apache.tomcat.util.net.NioSelectorPool.getSharedSelector Using a shared selector for servlet write/read
+13-Mar-2017 01:41:29.742 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["ajp-nio-8009"]
+13-Mar-2017 01:41:29.746 INFO [main] org.apache.tomcat.util.net.NioSelectorPool.getSharedSelector Using a shared selector for servlet write/read
+13-Mar-2017 01:41:29.750 INFO [main] org.apache.catalina.startup.Catalina.load Initialization processed in 1191 ms
+13-Mar-2017 01:41:29.799 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service Catalina
+13-Mar-2017 01:41:29.800 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet Engine: Apache Tomcat/9.0.0.M13
+13-Mar-2017 01:41:33.028 INFO [localhost-startStop-1] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+13-Mar-2017 01:44:39.667 INFO [localhost-startStop-1] org.apache.catalina.util.SessionIdGeneratorBase.createSecureRandom Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [184,298] milliseconds.
+13-Mar-2017 01:44:43.075 INFO [www.sozoer.com-startStop-1] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+13-Mar-2017 01:44:43.127 INFO [www.sozoer.com-startStop-1] org.apache.catalina.core.ApplicationContext.log Initializing Spring root WebApplicationContext
+13-Mar-2017 01:44:50.289 INFO [www.eshou2.com-startStop-1] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+13-Mar-2017 01:44:50.305 INFO [www.eshou2.com-startStop-1] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+13-Mar-2017 01:44:50.533 INFO [www.eshou2.com-startStop-1] org.apache.catalina.core.ApplicationContext.log Initializing Spring FrameworkServlet 'Spring-Servlet'
+13-Mar-2017 01:44:55.492 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler [http-nio-80]
+13-Mar-2017 01:44:55.508 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler [ajp-nio-8009]
+13-Mar-2017 01:44:55.511 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in 205761 ms
+13-Mar-2017 02:25:13.654 INFO [http-nio-80-exec-4] org.apache.coyote.http11.Http11Processor.service Error parsing HTTP request header
+ Note: further occurrences of HTTP header parsing errors will be logged at DEBUG level.
+ java.lang.IllegalArgumentException: Invalid character found in method name. HTTP method names must be tokens
+	at org.apache.coyote.http11.Http11InputBuffer.parseRequestLine(Http11InputBuffer.java:402)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:667)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:745)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1455)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:745)
+
+13-Mar-2017 13:39:05.995 INFO [http-nio-80-exec-9] org.apache.coyote.http11.Http11Processor.service Error parsing HTTP request header
+ Note: further occurrences of HTTP header parsing errors will be logged at DEBUG level.
+ java.lang.IllegalArgumentException: Invalid character found in method name. HTTP method names must be tokens
+	at org.apache.coyote.http11.Http11InputBuffer.parseRequestLine(Http11InputBuffer.java:402)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:667)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:745)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1455)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:745)
+
+13-Mar-2017 16:52:12.501 SEVERE [ajp-nio-8009-exec-1] org.apache.coyote.ajp.AjpMessage.processHeader Invalid message received with signature 18245

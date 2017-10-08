@@ -1,0 +1,399 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="stocks.dao.datas.TSearchsDao" > 
+<!-- Result Map-->
+<resultMap id="BaseResultMap" type="stocks.entity.datas.TSearchs" >
+	<result column="id" property="id"/>
+	<result column="searchtitle" property="searchtitle"/>
+	<result column="typeflag" property="typeflag"/>
+	<result column="increpermin" property="increpermin"/>
+	<result column="increpermax" property="increpermax"/>
+	<result column="increperorder" property="increperorder"/>
+	<result column="nowprimin" property="nowprimin"/>
+	<result column="nowprimax" property="nowprimax"/>
+	<result column="nowpriorder" property="nowpriorder"/>
+	<result column="tratemin" property="tratemin"/>
+	<result column="tratemax" property="tratemax"/>
+	<result column="trateorder" property="trateorder"/>
+	<result column="swingmin" property="swingmin"/>
+	<result column="swingmax" property="swingmax"/>
+	<result column="swingorder" property="swingorder"/>
+	<result column="tranumbermin" property="tranumbermin"/>
+	<result column="tranumbermax" property="tranumbermax"/>
+	<result column="tranumberorder" property="tranumberorder"/>
+	<result column="traamountmin" property="traamountmin"/>
+	<result column="traamountmax" property="traamountmax"/>
+	<result column="traamountorder" property="traamountorder"/>
+	<result column="datemin" property="datemin"/>
+	<result column="datemax" property="datemax"/>
+	<result column="dateorder" property="dateorder"/>
+	<result column="datenum" property="datenum"/>
+	<result column="difforder" property="difforder"/>
+	<result column="deaorder" property="deaorder"/>
+	<result column="macdorder" property="macdorder"/>
+	<result column="macdmin" property="macdmin"/>
+	<result column="macdmax" property="macdmax"/>
+	<result column="circulatemoney" property="circulatemoney"/>
+	<result column="ratio" property="ratio"/>
+	<result column="lyr" property="lyr"/>
+	<result column="ttm" property="ttm"/>
+	<result column="gtype" property="gtype"/>
+	<result column="gcode" property="gcode"/>
+	<result column="remark" property="remark"/>
+	<result column="useflag" property="useflag"/>
+	<result column="usecodes" property="usecodes"/>
+	<result column="winnum" property="winnum"/>
+	<result column="defeatnum" property="defeatnum"/>
+	<result column="winper" property="winper"/>
+	<result column="ktype" property="ktype"/>
+	<result column="stateflag" property="stateflag"/>
+</resultMap>
+       
+<!-- t_searchs table all fields -->
+<sql id="Base_Column_List" >
+	 id,searchtitle,typeflag,increpermin,increpermax,increperorder,nowprimin,nowprimax,nowpriorder,tratemin,tratemax,trateorder,swingmin,swingmax,swingorder,tranumbermin,tranumbermax,tranumberorder,traamountmin,traamountmax,traamountorder,datemin,datemax,dateorder,datenum,difforder,deaorder,macdorder,macdmin,macdmax,circulatemoney,ratio,lyr,ttm,gtype,gcode,remark,useflag,usecodes,winnum,defeatnum,winper,ktype,stateflag
+</sql>
+   
+   
+<!-- 查询条件 -->
+<sql id="Example_Where_Clause">
+where 1=1
+<trim  suffixOverrides="," >
+	<if test="id != null and id != ''" >
+	    and id =  #{id}
+	</if>
+	<if test="searchtitle != null and searchtitle != ''" >
+	    and searchtitle like CONCAT('%',#{searchtitle},'%')
+	</if>
+	<if test="typeflag != null and typeflag != ''" >
+	    and typeflag =  #{typeflag}
+	</if>
+	<if test="increpermin != null and increpermin != ''" >
+	    and increpermin =  #{increpermin}
+	</if>
+	<if test="increpermax != null and increpermax != ''" >
+	    and increpermax =  #{increpermax}
+	</if>
+	<if test="increperorder != null and increperorder != ''" >
+	    and increperorder =  #{increperorder}
+	</if>
+	<if test="nowprimin != null and nowprimin != ''" >
+	    and nowprimin =  #{nowprimin}
+	</if>
+	<if test="nowprimax != null and nowprimax != ''" >
+	    and nowprimax =  #{nowprimax}
+	</if>
+	<if test="nowpriorder != null and nowpriorder != ''" >
+	    and nowpriorder =  #{nowpriorder}
+	</if>
+	<if test="tratemin != null and tratemin != ''" >
+	    and tratemin =  #{tratemin}
+	</if>
+	<if test="tratemax != null and tratemax != ''" >
+	    and tratemax =  #{tratemax}
+	</if>
+	<if test="trateorder != null and trateorder != ''" >
+	    and trateorder =  #{trateorder}
+	</if>
+	<if test="swingmin != null and swingmin != ''" >
+	    and swingmin =  #{swingmin}
+	</if>
+	<if test="swingmax != null and swingmax != ''" >
+	    and swingmax =  #{swingmax}
+	</if>
+	<if test="swingorder != null and swingorder != ''" >
+	    and swingorder =  #{swingorder}
+	</if>
+	<if test="tranumbermin != null and tranumbermin != ''" >
+	    and tranumbermin =  #{tranumbermin}
+	</if>
+	<if test="tranumbermax != null and tranumbermax != ''" >
+	    and tranumbermax =  #{tranumbermax}
+	</if>
+	<if test="tranumberorder != null and tranumberorder != ''" >
+	    and tranumberorder =  #{tranumberorder}
+	</if>
+	<if test="traamountmin != null and traamountmin != ''" >
+	    and traamountmin =  #{traamountmin}
+	</if>
+	<if test="traamountmax != null and traamountmax != ''" >
+	    and traamountmax =  #{traamountmax}
+	</if>
+	<if test="traamountorder != null and traamountorder != ''" >
+	    and traamountorder =  #{traamountorder}
+	</if>
+	<if test="datemin != null and datemin != ''" >
+	    and datemin =  #{datemin}
+	</if>
+	<if test="datemax != null and datemax != ''" >
+	    and datemax =  #{datemax}
+	</if>
+	<if test="dateorder != null and dateorder != ''" >
+	    and dateorder =  #{dateorder}
+	</if>
+	<if test="datenum != null and datenum != ''" >
+	    and datenum =  #{datenum}
+	</if>
+	<if test="difforder != null and difforder != ''" >
+	    and difforder =  #{difforder}
+	</if>
+	<if test="deaorder != null and deaorder != ''" >
+	    and deaorder =  #{deaorder}
+	</if>
+	<if test="macdorder != null and macdorder != ''" >
+	    and macdorder =  #{macdorder}
+	</if>
+	<if test="macdmin != null and macdmin != ''" >
+	    and macdmin =  #{macdmin}
+	</if>
+	<if test="macdmax != null and macdmax != ''" >
+	    and macdmax =  #{macdmax}
+	</if>
+	<if test="circulatemoney != null and circulatemoney != ''" >
+	    and circulatemoney =  #{circulatemoney}
+	</if>
+	<if test="ratio != null and ratio != ''" >
+	    and ratio =  #{ratio}
+	</if>
+	<if test="lyr != null and lyr != ''" >
+	    and lyr =  #{lyr}
+	</if>
+	<if test="ttm != null and ttm != ''" >
+	    and ttm =  #{ttm}
+	</if>
+	<if test="gtype != null and gtype != ''" >
+	    and gtype =  #{gtype}
+	</if>
+	<if test="gcode != null and gcode != ''" >
+	    and gcode =  #{gcode}
+	</if>
+	<if test="remark != null and remark != ''" >
+		and remark like CONCAT('%',#{remark},'%')
+	</if>
+	<if test="useflag != null and useflag != ''" >
+	    and useflag =  #{useflag}
+	</if>
+	<if test="usecodes != null and usecodes != ''" >
+		and usecodes like CONCAT('%',#{usecodes},'%')
+	</if>
+	<if test="winnum != null and winnum != ''" >
+	    and winnum >=  #{winnum}
+	</if>
+	<if test="defeatnum != null and defeatnum != ''" >
+	    and defeatnum =  #{defeatnum}
+	</if>
+	<if test="winper != null and winper != ''" >
+	    and winper >=  #{winper}
+	</if>
+	<if test="ktype != null and ktype != ''" >
+	    and ktype =  #{ktype}
+	</if>
+	<if test="stateflag != null and stateflag != ''" >
+	    and stateflag =  #{stateflag}
+	</if>
+</trim>
+</sql>
+   
+
+<!-- 插入记录 -->
+<insert id="add" parameterType="Object" >
+<selectKey resultType="java.lang.Integer" order="AFTER" keyProperty="id">
+	SELECT LAST_INSERT_ID()
+  </selectKey>
+  insert into t_searchs(id,searchtitle,typeflag,increpermin,increpermax,increperorder,nowprimin,nowprimax,nowpriorder,tratemin,tratemax,trateorder,swingmin,swingmax,swingorder,tranumbermin,tranumbermax,tranumberorder,traamountmin,traamountmax,traamountorder,datemin,datemax,dateorder,datenum,difforder,deaorder,macdorder,macdmin,macdmax,circulatemoney,ratio,lyr,ttm,gtype,gcode,remark,useflag,usecodes,winnum,defeatnum,winper,ktype,stateflag)
+ values(#{id},#{searchtitle},#{typeflag},#{increpermin},#{increpermax},#{increperorder},#{nowprimin},#{nowprimax},#{nowpriorder},#{tratemin},#{tratemax},#{trateorder},#{swingmin},#{swingmax},#{swingorder},#{tranumbermin},#{tranumbermax},#{tranumberorder},#{traamountmin},#{traamountmax},#{traamountorder},#{datemin},#{datemax},#{dateorder},#{datenum},#{difforder},#{deaorder},#{macdorder},#{macdmin},#{macdmax},#{circulatemoney},#{ratio},#{lyr},#{ttm},#{gtype},#{gcode},#{remark},#{useflag},#{usecodes},0,0,0,#{ktype},#{stateflag})
+</insert>
+
+<!-- 根据id，修改记录-->  
+ <update id="update" parameterType="Object" >
+  update t_searchs set searchtitle=#{searchtitle},typeflag=#{typeflag},increpermin=#{increpermin},increpermax=#{increpermax},
+  increperorder=#{increperorder},nowprimin=#{nowprimin},nowprimax=#{nowprimax},nowpriorder=#{nowpriorder},tratemin=#{tratemin},tratemax=#{tratemax},trateorder=#{trateorder},swingmin=#{swingmin},
+  swingmax=#{swingmax},swingorder=#{swingorder},tranumbermin=#{tranumbermin},tranumbermax=#{tranumbermax},tranumberorder=#{tranumberorder},
+  traamountmin=#{traamountmin},traamountmax=#{traamountmax},traamountorder=#{traamountorder},datemin=#{datemin},datemax=#{datemax},
+  dateorder=#{dateorder},datenum=#{datenum},difforder=#{difforder},deaorder=#{deaorder},macdorder=#{macdorder},macdmin=#{macdmin},macdmax=#{macdmax},circulatemoney=#{circulatemoney},
+  ratio=#{ratio},lyr=#{lyr},ttm=#{ttm},gtype=#{gtype},gcode=#{gcode},remark=#{remark},useflag=#{useflag},usecodes=#{usecodes},ktype=#{ktype},
+  stateflag=#{stateflag} where id=#{id}
+ </update>
+ 
+ <!-- 修改记录，只修改值不为空的字段，可修改成功次数，失败次数，成功比率 -->
+<update id="updateBySelective" parameterType="Object" >
+	update t_searchs set 
+	<trim  suffixOverrides="," >
+	<if test="searchtitle != null  ">
+		searchtitle=#{searchtitle},
+	</if>
+	<if test="typeflag != null  ">
+		typeflag=#{typeflag},
+	</if>
+	<if test="increpermin != null  ">
+		increpermin=#{increpermin},
+	</if>
+	<if test="increpermax != null  ">
+		increpermax=#{increpermax},
+	</if>
+	<if test="increperorder != null  ">
+		increperorder=#{increperorder},
+	</if>
+	<if test="nowprimin != null  ">
+		nowprimin=#{nowprimin},
+	</if>
+	<if test="nowprimax != null  ">
+		nowprimax=#{nowprimax},
+	</if>
+	<if test="nowpriorder != null  ">
+		nowpriorder=#{nowpriorder},
+	</if>
+	<if test="tratemin != null  ">
+		tratemin=#{tratemin},
+	</if>
+	<if test="tratemax != null  ">
+		tratemax=#{tratemax},
+	</if>
+	<if test="trateorder != null  ">
+		trateorder=#{trateorder},
+	</if>
+	<if test="swingmin != null  ">
+		swingmin=#{swingmin},
+	</if>
+	<if test="swingmax != null  ">
+		swingmax=#{swingmax},
+	</if>
+	<if test="swingorder != null  ">
+		swingorder=#{swingorder},
+	</if>
+	<if test="tranumbermin != null  ">
+		tranumbermin=#{tranumbermin},
+	</if>
+	<if test="tranumbermax != null  ">
+		tranumbermax=#{tranumbermax},
+	</if>
+	<if test="tranumberorder != null  ">
+		tranumberorder=#{tranumberorder},
+	</if>
+	<if test="traamountmin != null  ">
+		traamountmin=#{traamountmin},
+	</if>
+	<if test="traamountmax != null  ">
+		traamountmax=#{traamountmax},
+	</if>
+	<if test="traamountorder != null  ">
+		traamountorder=#{traamountorder},
+	</if>
+	<if test="datemin != null  ">
+		datemin=#{datemin},
+	</if>
+	<if test="datemax != null  ">
+		datemax=#{datemax},
+	</if>
+	<if test="dateorder != null  ">
+		dateorder=#{dateorder},
+	</if>
+	<if test="datenum != null  ">
+		datenum=#{datenum},
+	</if>
+	<if test="difforder != null  ">
+		difforder=#{difforder},
+	</if>
+	<if test="deaorder != null  ">
+		deaorder=#{deaorder},
+	</if>
+	<if test="macdorder != null  ">
+		macdorder=#{macdorder},
+	</if>
+	<if test="macdmin != null  ">
+		macdmin=#{macdmin},
+	</if>
+	<if test="macdmax != null  ">
+		macdmax=#{macdmax},
+	</if>
+	<if test="circulatemoney != null  ">
+		circulatemoney=#{circulatemoney},
+	</if>
+	<if test="ratio != null  ">
+		ratio=#{ratio},
+	</if>
+	<if test="lyr != null  ">
+		lyr=#{lyr},
+	</if>
+	<if test="ttm != null  ">
+		ttm=#{ttm},
+	</if>
+	<if test="gtype != null  ">
+		gtype=#{gtype},
+	</if>
+	<if test="gcode != null  ">
+		gcode=#{gcode},
+	</if>
+	<if test="remark != null  ">
+		remark=#{remark},
+	</if>
+	<if test="useflag != null  ">
+		useflag=#{useflag},
+	</if>
+	<if test="usecodes != null  ">
+		usecodes=#{usecodes},
+	</if>
+	<if test="winnum != null  ">
+		winnum=#{winnum},
+	</if>
+	<if test="defeatnum != null  ">
+		defeatnum=#{defeatnum},
+	</if>
+	<if test="winper != null  ">
+		winper=#{winper},
+	</if>
+	<if test="ktype != null  ">
+		ktype=#{ktype},
+	</if>
+	<if test="stateflag != null  ">
+		stateflag=#{stateflag},
+	</if>
+	</trim> where id=#{id}
+</update>
+
+<!-- 删除记录 -->
+<delete id="delete" parameterType="Object">
+	delete 	 from t_searchs where id = #{id}
+</delete>
+ 
+<!-- 根据id查询 查询条件表 -->
+<select id="queryById"  resultMap="BaseResultMap" parameterType="Object">
+	select <include refid="Base_Column_List" /> 
+	 from t_searchs where id = #{id}
+</select>
+
+<!-- 查询条件表 列表总数-->
+<select id="queryByCount" resultType="java.lang.Integer"  parameterType="Object">
+	select count(1) from t_searchs 
+	<include refid="Example_Where_Clause"/>
+</select>
+  	
+<!-- 查询查询条件表列表 -->
+<select id="queryByList" resultMap="BaseResultMap"  parameterType="Object">
+	select 
+	<include refid="Base_Column_List"/>
+	from t_searchs 
+	<include refid="Example_Where_Clause"/>
+	<if test="pager.orderCondition != null and pager.orderCondition != ''" >
+      ${pager.orderCondition}
+    </if>
+    <if test="pager.mysqlQueryCondition != null and pager.mysqlQueryCondition != ''" >
+       ${pager.mysqlQueryCondition}
+    </if>
+</select>
+  	
+  	<!-- fly.start -->
+<!-- 查询查询条件表列表 -->
+<select id="queryAll" resultMap="BaseResultMap"  parameterType="java.lang.Integer">
+	select 
+	id,searchtitle
+	from t_searchs where stateflag = 1
+	<if test="typeflag != null and typeflag != ''" >
+      and typeflag = #{typeflag}
+    </if>
+    order by useflag asc,typeflag desc,winper desc,id asc
+</select>
+  	
+</mapper>   

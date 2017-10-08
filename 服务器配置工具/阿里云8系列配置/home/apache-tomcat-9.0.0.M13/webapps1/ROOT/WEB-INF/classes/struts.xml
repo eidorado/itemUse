@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<constant name="struts.i18n.encoding" value="utf-8"></constant>
+	<constant name="struts.custom.i18n.resources" value="myMessage"></constant>
+	<package name="struts2" extends="struts-default,json-default">
+		<!-- 查看用户是否在线拦截器 ，组合<result name="login" type="redirect">/possw0rddyh0z0sfafafa/hzd1jgongesjgs666zqss1gdlyemianwyhohoho.jsp</result>一起用
+		还要带上<interceptor-ref name="defaultStack"></interceptor-ref>要不然没法传值-->
+		<interceptors>
+			<interceptor name="userInterceptor" class="com.sanqing.interceptor.UserInterceptor"></interceptor>
+		</interceptors>
+		
+		<action name="showPhoto" class="com.sanqing.action.ShowPhoto">
+			<result name="success">/pages/back/showphoto.jsp</result>
+			<result name="login" type="redirect">/possw0rddyh0z0sfafafa/hzd1jgongesjgs666zqss1gdlyemianwyhohoho.jsp</result>
+			<interceptor-ref name="userInterceptor"></interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+		</action>
+		
+		<!-- SOZO前台 -->
+		<action name="headSoZo" class="soZoPicAction"  method="headSoZo">
+			<result name="success">/pages/headSoZo.jsp</result>
+		</action>
+		<action name="headSoZoDetail" class="soZoPicAction"  method="headSoZoDetail">
+			<result name="success">/pages/headSoZoDetail.jsp</result>
+		</action>
+		<action name="headSoZoAboutDetail" class="soZoPicAction"  method="headSoZoAboutDetail">
+			<result name="success">/pages/headSoZoAboutDetail.jsp</result>
+		</action>
+		<action name="headNews" class="soZoPicAction"  method="headNews">
+			<result name="success">/pages/headNews.jsp</result>
+		</action>
+		<action name="headNewsDetail" class="soZoPicAction"  method="headNewsDetail">
+			<result name="success">/pages/headNewsDetail.jsp</result>
+		</action>
+		<action name="headTagMore" class="soZoPicAction"  method="headTagMore">
+			<result name="success">/pages/headTagMore.jsp</result>
+		</action>
+		
+		<!-- SOZO前台APP -->
+		<action name="headSoZoApp" class="soZoPicAppAction"  method="headSoZoApp">
+			<result name="success">/pagesApp/headSoZo.jsp</result>
+		</action>
+		<action name="headSoZoDetailApp" class="soZoPicAppAction"  method="headSoZoDetailApp">
+			<result name="success">/pagesApp/headSoZoDetail.jsp</result>
+		</action>
+		<action name="headSoZoAboutDetailApp" class="soZoPicAppAction"  method="headSoZoAboutDetailApp">
+			<result name="success">/pagesApp/headSoZoAboutDetail.jsp</result>
+		</action>
+		<action name="headNewsApp" class="soZoPicAppAction"  method="headNewsApp">
+			<result name="success">/pagesApp/headNews.jsp</result>
+		</action>
+		<action name="headNewsDetailApp" class="soZoPicAppAction"  method="headNewsDetailApp">
+			<result name="success">/pagesApp/headNewsDetail.jsp</result>
+		</action>
+		<action name="headTagMoreApp" class="soZoPicAppAction"  method="headTagMoreApp">
+			<result name="success">/pagesApp/headTagMore.jsp</result>
+		</action>
+		
+		<!-- SOZO后台 -->
+		<action name="sozoBack" class="soZoBackAction"  method="sozoBack">
+			<result name="success">/pages/back/sozoBack.jsp</result>
+			<result name="error">/error.jsp</result>
+			<result name="login" type="redirect">/possw0rddyh0z0sfafafa/hzd1jgongesjgs666zqss1gdlyemianwyhohoho.jsp</result>
+			<interceptor-ref name="userInterceptor"></interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+		</action>
+		<action name="dataStatBack" class="soZoBackAction"  method="dataStatBack">
+			<result name="success">/pages/back/dataStatBack.jsp</result>
+			<result name="error">/error.jsp</result>
+			<result name="login" type="redirect">/possw0rddyh0z0sfafafa/hzd1jgongesjgs666zqss1gdlyemianwyhohoho.jsp</result>
+			<interceptor-ref name="userInterceptor"></interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+		</action>
+		<!-- SOZO_Pic-->
+		<action name="sozoPicMag" class="soZoPicAction"  method="sozoPicMag">
+			<result name="success">/pages/back/sozoPicMag.jsp</result>
+			<result name="error">/error.jsp</result>
+			<result name="login" type="redirect">/possw0rddyh0z0sfafafa/hzd1jgongesjgs666zqss1gdlyemianwyhohoho.jsp</result>
+			<interceptor-ref name="userInterceptor"></interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+		</action>
+		<action name="sozoPicDel" class="soZoPicAction" method="delete">
+			<result name="success" type="chain">sozoPicMag</result>
+			<result name="error">/error.jsp</result>
+			<result name="login" type="redirect">/possw0rddyh0z0sfafafa/hzd1jgongesjgs666zqss1gdlyemianwyhohoho.jsp</result>
+			<interceptor-ref name="userInterceptor"></interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+		</action>
+		<!-- SOZOTag-->
+		<action name="sozoTag" class="soZoTagAction"  method="sozoTag">
+			<result name="success">/pages/back/sozoTag.jsp</result>
+			<result name="error">/error.jsp</result>
+			<result name="login" type="redirect">/possw0rddyh0z0sfafafa/hzd1jgongesjgs666zqss1gdlyemianwyhohoho.jsp</result>
+			<interceptor-ref name="userInterceptor"></interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+		</action>
+		<action name="sozoTagSave" class="soZoTagAction" method="saveOrUpdate">
+			<result name="success" type="chain">sozoTag</result>
+			<result name="error">/error.jsp</result>
+			<result name="login" type="redirect">/possw0rddyh0z0sfafafa/hzd1jgongesjgs666zqss1gdlyemianwyhohoho.jsp</result>
+			<interceptor-ref name="userInterceptor"></interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+		</action>
+		<action name="sozoTagDel" class="soZoTagAction" method="delete">
+			<result name="success" type="chain">sozoTag</result>
+			<result name="error">/error.jsp</result>
+			<result name="login" type="redirect">/possw0rddyh0z0sfafafa/hzd1jgongesjgs666zqss1gdlyemianwyhohoho.jsp</result>
+			<interceptor-ref name="userInterceptor"></interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+		</action>
+		<!-- SOZOPicDetail-->
+		<action name="sozoPicDetail" class="soZoPicDetailAction"  method="showList">
+			<result name="success">/pages/back/sozoPicDetail.jsp</result>
+			<result name="error">/error.jsp</result>
+			<result name="login" type="redirect">/possw0rddyh0z0sfafafa/hzd1jgongesjgs666zqss1gdlyemianwyhohoho.jsp</result>
+			<interceptor-ref name="userInterceptor"></interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+		</action>
+		<!-- 关于我们 -->
+		<action name="sozoAboutDetail" class="soZoPicDetailAction"  method="showListAbout">
+			<result name="success">/pages/back/sozoAboutDetail.jsp</result>
+			<result name="error">/error.jsp</result>
+			<result name="login" type="redirect">/possw0rddyh0z0sfafafa/hzd1jgongesjgs666zqss1gdlyemianwyhohoho.jsp</result>
+			<interceptor-ref name="userInterceptor"></interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+		</action>
+		<!-- user-->
+		<action name="userMag" class="userAction"  method="userMag">
+			<result name="success">/pages/back/userMag.jsp</result>
+			<result name="error">/error.jsp</result>
+			<result name="login" type="redirect">/possw0rddyh0z0sfafafa/hzd1jgongesjgs666zqss1gdlyemianwyhohoho.jsp</result>
+			<interceptor-ref name="userInterceptor"></interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+		</action>
+		<action name="userSave" class="userAction" method="saveOrUpdate">
+			<result name="success" type="redirectAction">userMag</result>
+			<result name="error">/error.jsp</result>
+			<result name="login" type="redirect">/possw0rddyh0z0sfafafa/hzd1jgongesjgs666zqss1gdlyemianwyhohoho.jsp</result>
+			<interceptor-ref name="userInterceptor"></interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+		</action>
+		<action name="userDel" class="userAction" method="delete">
+			<result name="success" type="chain">userMag</result>
+			<result name="error">/error.jsp</result>
+			<result name="login" type="redirect">/possw0rddyh0z0sfafafa/hzd1jgongesjgs666zqss1gdlyemianwyhohoho.jsp</result>
+			<interceptor-ref name="userInterceptor"></interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+		</action>
+		<action name="resetPassword" class="userAction" method="resetPassword">
+			<result name="success" type="redirectAction">userMag</result>
+			<result name="error">/error.jsp</result>
+			<result name="login" type="redirect">/possw0rddyh0z0sfafafa/hzd1jgongesjgs666zqss1gdlyemianwyhohoho.jsp</result>
+			<interceptor-ref name="userInterceptor"></interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+		</action>
+			<action name="updateMe" class="userAction" method="updateMe">
+			<result name="success" type="redirectAction">sozoBack</result>
+			<result name="error">/error.jsp</result>
+			<result name="login" type="redirect">/possw0rddyh0z0sfafafa/hzd1jgongesjgs666zqss1gdlyemianwyhohoho.jsp</result>
+			<interceptor-ref name="userInterceptor"></interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+		</action>
+		<action name="updatePassword" class="userAction" method="updatePassword">
+			<result name="success" type="redirectAction">sozoBack</result>
+			<result name="error">/error.jsp</result>
+			<result name="login" type="redirect">/possw0rddyh0z0sfafafa/hzd1jgongesjgs666zqss1gdlyemianwyhohoho.jsp</result>
+			<interceptor-ref name="userInterceptor"></interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+		</action>
+
+
+
+		
+		<action name="login" class="loginAction" method="login">
+			<result type="json">  
+                <param name="root">rows</param>  
+            </result>  
+		</action>
+		<action name="loginByQuestion" class="loginAction" method="loginByQuestion">
+			<result type="json">  
+                <param name="root">rows</param>  
+            </result>  
+		</action>
+		<!-- SOZOTag-->
+		<action name="sozoTagAll" class="soZoTagAction" method="showAll">
+			<result type="json">  
+                <!-- 这里指定将被Struts2序列化的属性，该属性在action中必须有对应的getter方法 -->  
+                <param name="root">rows</param>  
+            </result>  
+            <result name="login" type="redirect">/possw0rddyh0z0sfafafa/hzd1jgongesjgs666zqss1gdlyemianwyhohoho.jsp</result>
+			<interceptor-ref name="userInterceptor"></interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+		</action>
+		<!-- SOZO_Pic-->
+		<action name="sozoPicSave" class="soZoPicAction" method="saveOrUpdate">
+			<result type="json">  
+                <param name="root">rows</param>  
+            </result> 
+            <result name="login" type="redirect">/possw0rddyh0z0sfafafa/hzd1jgongesjgs666zqss1gdlyemianwyhohoho.jsp</result>
+			<interceptor-ref name="userInterceptor"></interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+		</action>
+		<!-- 保存的时候验证用户是否存在即可，查询会出json数据，都要除非一些隐藏的不想让人看到 -->
+		<action name="sozoPicAll" class="soZoPicAction"  method="showListAll">
+			<result type="json">  
+                <param name="root">rows</param>  
+            </result> 
+            <result name="login" type="redirect">/possw0rddyh0z0sfafafa/hzd1jgongesjgs666zqss1gdlyemianwyhohoho.jsp</result>
+			<interceptor-ref name="userInterceptor"></interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+		</action>
+		<action name="updateSoZoPicSn" class="soZoPicAction"  method="updateSn">
+			<result type="json">  
+                <param name="root">rows</param>  
+            </result> 
+			<result name="login" type="redirect">/possw0rddyh0z0sfafafa/hzd1jgongesjgs666zqss1gdlyemianwyhohoho.jsp</result>
+			<interceptor-ref name="userInterceptor"></interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+		</action>
+		<!-- SOZO_PicDetail-->
+		<action name="sozoPicDetailSave" class="soZoPicDetailAction" method="saveOrUpdate">
+			<result type="json">  
+                <param name="root">rows</param>  
+            </result> 
+            <result name="login" type="redirect">/possw0rddyh0z0sfafafa/hzd1jgongesjgs666zqss1gdlyemianwyhohoho.jsp</result>
+			<interceptor-ref name="userInterceptor"></interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+		</action>
+		<action name="sozoPicDetailDel" class="soZoPicDetailAction" method="delete">
+			<result type="json">  
+                <param name="root">rows</param>  
+            </result> 
+			<result name="login" type="redirect">/possw0rddyh0z0sfafafa/hzd1jgongesjgs666zqss1gdlyemianwyhohoho.jsp</result>
+			<interceptor-ref name="userInterceptor"></interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+		</action>
+		<action name="sozoPicDetailAll" class="soZoPicDetailAction"  method="showListAll">
+			<result type="json">  
+                <param name="root">rows</param>  
+            </result> 
+            <result name="login" type="redirect">/possw0rddyh0z0sfafafa/hzd1jgongesjgs666zqss1gdlyemianwyhohoho.jsp</result>
+			<interceptor-ref name="userInterceptor"></interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+		</action>
+		<action name="updateSoZoPicDetailSn" class="soZoPicDetailAction"  method="updateSn">
+			<result type="json">  
+                <param name="root">rows</param>  
+            </result> 
+			<result name="login" type="redirect">/possw0rddyh0z0sfafafa/hzd1jgongesjgs666zqss1gdlyemianwyhohoho.jsp</result>
+			<interceptor-ref name="userInterceptor"></interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+		</action>
+		<!-- User -->
+		<action name="findByUsername" class="userAction"  method="findByUsername">
+			<result type="json">  
+                <param name="root">rows</param>  
+            </result> 
+			<result name="login" type="redirect">/possw0rddyh0z0sfafafa/hzd1jgongesjgs666zqss1gdlyemianwyhohoho.jsp</result>
+			<interceptor-ref name="userInterceptor"></interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+		</action>
+		<!-- File-->
+		<action name="fileUploadJson" class="com.sanqing.action.PhotoUpload">
+			<result type="json">  
+                <param name="root">rows</param>  
+            </result> 
+			<result name="input">/possw0rddyh0z0sfafafa/hzd1jgongesjgs666zqss1gdlyemianwyhohoho.jsp</result>  <!-- <result name="input //type="chain"">/user/showphoto.jsp</result> input:提交表单错误时-->
+			<result name="error">/error.jsp</result>
+			<!-- 配置fileUpload拦截器 -->
+			<interceptor-ref name="fileUpload">
+				<!-- 配置允许上传文件类型 -->
+				<!-- <param name="allowedTypes">image/bmp,image/pjpeg,image/gif,image/jpg,image/png</param> -->
+				<!-- 配置允许上传文件大小最大值 -->
+				<!-- 允许后缀名为png,bmp,jpg,doc,xls的文件上传 -->     
+				<param name="allowedExtensions">  
+				    png,bmp,jpg,pjpeg,gif,ico  
+				</param>  
+				<param name="maximumSize">5242880</param> <!-- 5M -->
+			</interceptor-ref>
+			<result name="login" type="redirect">/possw0rddyh0z0sfafafa/hzd1jgongesjgs666zqss1gdlyemianwyhohoho.jsp</result>
+			<interceptor-ref name="userInterceptor"></interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+		</action>
+	</package>
+</struts>

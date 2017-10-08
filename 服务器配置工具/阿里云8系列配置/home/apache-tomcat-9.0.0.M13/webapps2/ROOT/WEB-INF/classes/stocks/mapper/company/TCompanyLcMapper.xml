@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="stocks.dao.company.TCompanyLcDao" > 
+<!-- Result Map-->
+<resultMap id="BaseResultMap" type="stocks.entity.company.TCompanyLc" >
+	<result column="id" property="id"/>
+	<result column="gname" property="gname"/>
+	<result column="gcode" property="gcode"/>
+	<result column="totalmoney" property="totalmoney"/>
+	<result column="circulatemoney" property="circulatemoney"/>
+	<result column="ratio" property="ratio"/>
+	<result column="lyr" property="lyr"/>
+	<result column="ttm" property="ttm"/>
+	<result column="bpid" property="bpid"/>
+	<result column="bpname" property="bpname"/>
+	<result column="cpids" property="cpids"/>
+	<result column="cpnames" property="cpnames"/>
+	<result column="province" property="province"/>
+	<result column="city" property="city"/>
+	<result column="state" property="state"/>
+</resultMap>
+       
+<!-- t_company_lc table all fields -->
+<sql id="Base_Column_List" >
+	 id,gname,gcode,totalmoney,circulatemoney,ratio,lyr,ttm,bpid,bpname,cpids,cpnames,province,city,state
+</sql>
+   
+   
+<!-- 查询条件 -->
+<sql id="Example_Where_Clause">
+where 1=1
+<trim  suffixOverrides="," >
+	<if test="id != null and id != ''" >
+	    and id =  #{id}
+	</if>
+	<if test="gname != null and gname != ''" >
+	    and gname like CONCAT('%',#{gname},'%')
+	</if>
+	<if test="gcode != null and gcode != ''" >
+	    and gcode like CONCAT('%',#{gcode},'%')
+	</if>
+	<if test="totalmoney != null and totalmoney != ''" >
+	    and totalmoney =  #{totalmoney}
+	</if>
+	<if test="circulatemoney != null and circulatemoney != ''" >
+	    and circulatemoney =  #{circulatemoney}
+	</if>
+	<if test="ratio != null and ratio != ''" >
+	    and ratio =  #{ratio}
+	</if>
+	<if test="lyr != null and lyr != ''" >
+	    and lyr =  #{lyr}
+	</if>
+	<if test="ttm != null and ttm != ''" >
+	    and ttm =  #{ttm}
+	</if>
+	<if test="bpid != null and bpid != ''" >
+	    and bpid =  #{bpid}
+	</if>
+	<if test="bpname != null and bpname != ''" >
+	    and bpname =  #{bpname}
+	</if>
+	<if test="cpids != null and cpids != ''" >
+	    and cpids =  #{cpids}
+	</if>
+	<if test="cpnames != null and cpnames != ''" >
+	    and cpnames =  #{cpnames}
+	</if>
+	<if test="province != null and province != ''" >
+	    and province =  #{province}
+	</if>
+	<if test="city != null and city != ''" >
+	    and city =  #{city}
+	</if>
+	<if test="state != null and state != ''" >
+	    and state =  #{state}
+	</if>
+</trim>
+</sql>
+   
+
+<!-- 插入记录 -->
+<insert id="add" parameterType="Object" >
+<selectKey resultType="java.lang.Integer" order="AFTER" keyProperty="id">
+	SELECT LAST_INSERT_ID()
+  </selectKey>
+  insert into t_company_lc(id,gname,gcode,totalmoney,circulatemoney,ratio,lyr,ttm,bpid,bpname,cpids,cpnames,province,city,state)
+ values(#{id},#{gname},#{gcode},#{totalmoney},#{circulatemoney},#{ratio},#{lyr},#{ttm},#{bpid},#{bpname},#{cpids},#{cpnames},#{province},#{city},#{state})
+</insert>
+
+<!-- 插入记录 -->
+<insert id="addForm" parameterType="stocks.entity.company.TCompanyLc" >
+  insert into t_company_lc(gname,gcode,totalmoney,circulatemoney,ratio,lyr,ttm,bpid,bpname,cpids,cpnames,province,city,state)
+ values(#{gname},#{gcode},#{totalmoney},#{circulatemoney},#{ratio},#{lyr},#{ttm},#{bpid},#{bpname},#{cpids},#{cpnames},#{province},#{city},#{state})
+</insert>
+
+<!-- 根据id，修改记录-->  
+ <update id="update" parameterType="Object" >
+  update t_company_lc set gname=#{gname},gcode=#{gcode},totalmoney=#{totalmoney},circulatemoney=#{circulatemoney},ratio=#{ratio},lyr=#{lyr},ttm=#{ttm},bpid=#{bpid},bpname=#{bpname},cpids=#{cpids},cpnames=#{cpnames},province=#{province},city=#{city},state=#{state} where id=#{id}
+ </update>
+ 
+ <!-- 修改记录，只修改只不为空的字段 -->
+<update id="updateBySelective" parameterType="Object" >
+	update t_company_lc set 
+	<trim  suffixOverrides="," >
+	<if test="gname != null  ">
+		gname=#{gname},
+	</if>
+	<if test="gcode != null  ">
+		gcode=#{gcode},
+	</if>
+	<if test="totalmoney != null  ">
+		totalmoney=#{totalmoney},
+	</if>
+	<if test="circulatemoney != null  ">
+		circulatemoney=#{circulatemoney},
+	</if>
+	<if test="ratio != null  ">
+		ratio=#{ratio},
+	</if>
+	<if test="lyr != null  ">
+		lyr=#{lyr},
+	</if>
+	<if test="ttm != null  ">
+		ttm=#{ttm},
+	</if>
+	<if test="bpid != null  ">
+		bpid=#{bpid},
+	</if>
+	<if test="bpname != null  ">
+		bpname=#{bpname},
+	</if>
+	<if test="cpids != null  ">
+		cpids=#{cpids},
+	</if>
+	<if test="cpnames != null  ">
+		cpnames=#{cpnames},
+	</if>
+	<if test="province != null  ">
+		province=#{province},
+	</if>
+	<if test="city != null  ">
+		city=#{city},
+	</if>
+	<if test="state != null  ">
+		state=#{state},
+	</if>
+	</trim> where id=#{id}
+</update>
+
+<!-- 删除记录 -->
+<delete id="delete" parameterType="Object">
+	delete 	 from t_company_lc where id = #{id}
+</delete>
+ 
+<!-- 根据id查询 公司小幅变动信息 -->
+<select id="queryById"  resultMap="BaseResultMap" parameterType="Object">
+	select <include refid="Base_Column_List" /> 
+	 from t_company_lc where id = #{id}
+</select>
+
+<!-- 公司小幅变动信息 列表总数-->
+<select id="queryByCount" resultType="java.lang.Integer"  parameterType="Object">
+	select count(1) from t_company_lc 
+	<include refid="Example_Where_Clause"/>
+</select>
+  	
+<!-- 查询公司小幅变动信息列表 -->
+<select id="queryByList" resultMap="BaseResultMap"  parameterType="Object">
+	select 
+	<include refid="Base_Column_List"/>
+	from t_company_lc 
+	<include refid="Example_Where_Clause"/>
+	<if test="pager.orderCondition != null and pager.orderCondition != ''" >
+      ${pager.orderCondition}
+    </if>
+    <if test="pager.mysqlQueryCondition != null and pager.mysqlQueryCondition != ''" >
+       ${pager.mysqlQueryCondition}
+    </if>
+</select>
+  	
+<!-- 查询所有 -->
+<select id="queryAll" resultMap="BaseResultMap">
+	select 
+	<include refid="Base_Column_List"/>
+	from t_company_lc 
+</select>
+  	
+<!-- 查询所有 -->
+<select id="queryAllByState" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+	select 
+	<include refid="Base_Column_List"/>
+	from t_company_lc where 1=1
+	<choose>
+		<when test="state != null and state != ''">
+			<if test="state == 1">
+				and state = 1
+			</if>
+			<if test="state == 2">
+				and state = 2
+			</if>
+			<if test="state == 3">
+				and state = 3
+			</if>
+			<if test="state == 12">
+				and ( state = 1 or state = 2 )
+			</if>
+			<if test="state == 23">
+				and ( state = 2 or state = 3 )
+			</if>
+			<if test="state == 123">
+				and ( state = 1 or state = 2 or state = 3 )
+			</if>
+		</when>
+		<otherwise>
+			and state = null
+		</otherwise>
+	</choose>
+	order by state asc
+</select>
+  	
+</mapper>   

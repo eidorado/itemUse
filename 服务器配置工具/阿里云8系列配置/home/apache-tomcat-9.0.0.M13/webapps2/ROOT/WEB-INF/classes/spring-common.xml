@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:aop="http://www.springframework.org/schema/aop"  
+    xmlns:tx="http://www.springframework.org/schema/tx" 
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd" default-autowire="byType">
+	<!-- Annotation Config -->	
+	<context:annotation-config/>
+	
+	<!-- 扫描Service -->
+	<context:component-scan base-package="com.jeecg.service" />
+	<context:component-scan base-package="scott.service.*" />
+	<context:component-scan base-package="stocks.service.*" />
+	
+
+	<!-- ***************配置数据源************** -->
+	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">	
+         <property name="driverClassName"><value>com.mysql.jdbc.Driver</value></property> 
+         <!--   <property name="url"><value>jdbc:mysql://127.0.0.1:3306/jeecgmybatis?useUnicode=true&amp;charaterEncoding=utf-8</value></property> 
+         <property name="username"><value>root</value></property> 
+         <property name="password"><value>root</value></property> -->
+         
+         <!--    <property name="url"><value>jdbc:mysql://106.14.44.126:3306/db_stock?useUnicode=true&amp;charaterEncoding=utf-8</value></property> 
+         <property name="username"><value>flycity</value></property> 
+         <property name="password"><value>Possw0rd823@230</value></property> -->
+         
+                
+         <property name="url"><value>jdbc:mysql://127.0.0.1:3306/db_stock?useUnicode=true&amp;charaterEncoding=utf-8</value></property> 
+         <property name="username"><value>root</value></property> 
+         <property name="password"><value>fY*98possw0rd</value></property>
+         <!-- 本地测试库jeecgmybatis   纯净库db_stock-->
+         <!-- 阿里云服务器内部 db_stock   localhost root fY*98possw0rd  外部：106.14.44.126:3306  flycity   Possw0rd823@230-->
+         <!-- 本地Centos7服务器内部 localhost root root  外部：192.168.211.128  root  rootcs7-->
+	</bean>
+	
+	
+	
+	<!-- ***************事务配置************** -->
+	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+
+	<aop:config>  
+        <aop:advisor pointcut="execution(* com.jeecg.service.*.*(..))"  advice-ref="txAdvice" />  
+        <aop:advisor pointcut="execution(* scott.service.*.*(..))"  advice-ref="txAdvice" />  
+        <aop:advisor pointcut="execution(* stocks.service.*.*(..))"  advice-ref="txAdvice" />  
+    </aop:config>  
+  
+    <tx:advice id="txAdvice" transaction-manager="transactionManager">  
+        <tx:attributes>  
+            <tx:method name="get*" read-only="true" />  
+            <tx:method name="query*" read-only="true" />  
+            <tx:method name="find*" read-only="true" />  
+            <tx:method name="load*" read-only="true" />
+            <tx:method name="select*" read-only="true" />  
+            <tx:method name="*" propagation="REQUIRED" rollback-for="Exception" />  
+        </tx:attributes>  
+    </tx:advice>  
+	
+	
+	<!-- 扫描 MyBatis Sql -->
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="mapperLocations">
+			 <list>
+			  	<value>classpath:com/jeecg/mapper/*Mapper.xml</value>
+			  	<value>classpath:scott/mapper/*/*Mapper.xml</value>
+			  	<value>classpath:stocks/mapper/*/*Mapper.xml</value>
+			 </list>
+		</property>
+	</bean>
+	
+	<!-- 扫描mapper.java  -->
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer" autowire="byName">    
+	    <property name="basePackage" value="com.jeecg.dao,scott.dao.*,com.jeecg.dao,stocks.dao.*" />
+	    <property name="sqlSessionFactory" ref="sqlSessionFactory"/>
+	</bean>
+
+  
+	<!-- Spring 工具类 -->
+	<bean id="springContextUtil" class="com.base.util.SpringContextUtil" />
+	
+	 <!-- SpringMVC上传文件时，需要配置MultipartResolver处理器 -->  
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">  
+        <property name="defaultEncoding" value="utf-8" />  
+        <!-- 指定所上传文件的总大小不能超过10485760000B。注意maxUploadSize属性的限制不是针对单个文件，而是所有文件的容量之和 -->  
+        <property name="maxUploadSize" value="10485760000" />  
+        <property name="maxInMemorySize" value="40960" />  
+    </bean> 
+</beans>
+
