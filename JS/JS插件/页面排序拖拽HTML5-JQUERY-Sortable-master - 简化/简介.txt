@@ -1,0 +1,3 @@
+如果一般拖动，实际只需要Sortable.js
+Sortable.min.js会影响图片的拖动
+st文件里app.css和app.js都要的
