@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<javascript>
+	<aliases>
+		<alias type="Class&lt;Vue&gt;" name="Vue"/>
+	</aliases>
+	<class type="ComponentOptions">
+		<properties>
+			<property name="data" type="Object"/>
+			<property name="props" type="String[]"/>
+			<property name="propsData" type="Object"/>
+			<property name="computed" type="Object"/>
+			<property name="methods" type="Object"/>
+			<property name="watch" type="Object"/>
+			<property name="el" type="Element|SelectorString"/>
+			<property name="template" type="HTMLString"/>
+			<property name="renderError" type="Function"/>
+			<property name="render" type="Function"/>
+			<property name="staticRenderFns" type="Array&lt;Function&gt;"/>
+			<property name="beforeCreate" type="Function"/>
+			<property name="created" type="Function"/>
+			<property name="beforeDestroy" type="Function"/>
+			<property name="destroyed" type="Function"/>
+			<property name="beforeMount" type="Function"/>
+			<property name="mounted" type="Function"/>
+			<property name="beforeUpdate" type="Function"/>
+			<property name="updated" type="Function"/>
+			<property name="activated" type="Function"/>
+			<property name="deactivated" type="Function"/>
+			<property name="directives" type="Object"/>
+			<property name="components" type="Map&lt;String,ComponentOptions&gt;"/>
+			<property name="transitions" type="Object"/>
+			<property name="filters" type="Object"/>
+			<property name="provide" type="Object"/>
+			<property name="inject" type="Object"/>
+			<property name="model" type="ComponentOptions.model"/>
+			<property name="parent" type="Vue"/>
+			<property name="mixins" type="ComponentOptions"/>
+			<property name="name" type="String"/>
+			<property name="extends" type="Object"/>
+			<property name="delimiters" type="String[]"/>
+			<property name="functional" type="Boolean"/>
+		</properties>
+	</class>
+
+	<class type="ComponentOptions.model">
+		<properties>
+			<property name="prop" type="String"/>
+			<property name="event" type="String"/>
+		</properties>
+	</class>
+
+	<class type="Vue.config">
+		<properties>
+			<property name="silent" type="boolean"/>
+			<property name="optionMergeStrategies" type="Object"/>
+			<property name="devtools" type="boolean"/>
+			<property name="productionTip" type="boolean"/>
+			<property name="performance" type="boolean"/>
+			<property name="ignoredElements" type="String[]"/>
+			<property name="keyCodes" type="Object"/>
+		</properties>
+		<methods>
+			<method name="errorHandler">
+				<parameters>
+					<parameter name="err" type="Error"/>
+					<parameter name="vm" type="Vue"/>
+					<parameter name="info" type="String"/>
+				</parameters>
+			</method>
+		</methods>
+	</class>
+	<class type="Vue.compile">
+		<properties>
+			<property name="staticRenderFns" type="Array&lt;Function&gt;"/>
+		</properties>
+		<methods>
+			<method name="render">
+				<parameters>
+					<parameter name="createElement" type="CreateElement"/>
+				</parameters>
+				<return-types>
+					<return-type type="VNode"/>
+				</return-types>
+			</method>
+		</methods>
+	</class>
+	<class type="Vue">
+		<constructors>
+			<constructor>
+				<parameters>
+					<parameter name="options" type="ComponentOptions" />
+				</parameters>
+				<return-types>
+					<return-type type="Vue"/>
+				</return-types>
+			</constructor>
+		</constructors>
+		<methods>
+			<method name="$mount">
+				<parameters>
+					<parameter name="elementOrSelector" type="Element|SelectorString"/>
+					<parameter name="hydrating" type="Boolean"/>
+				</parameters>
+				<return-types>
+					<return-type type="Vue"/>
+				</return-types>
+			</method>
+			<method name="$forceUpdate">
+			</method>
+			<method name="$destroy">
+			</method>
+			<method name="$watch">
+				<parameters>
+					<parameter name="expOrFn" type="String" usage="required"/>
+					<parameter name="callback" type="Function(Vue,Object)" usage="required"/>
+					<parameter name="options" type="WatchOptions"/>
+				</parameters>
+				<return-types>
+					<return-type type="Function"/>
+				</return-types>
+			</method>
+			<method name="$on">
+				<parameters>
+					<parameter name="event" type="String" usage="required"/>
+					<parameter name="callback" type="Function" usage="required"/>
+				</parameters>
+				<return-types>
+					<return-type type="Vue"/>
+				</return-types>
+			</method>
+			<method name="$once">
+				<parameters>
+					<parameter name="event" type="String" usage="required"/>
+					<parameter name="callback" type="Function" usage="required"/>
+				</parameters>
+				<return-types>
+					<return-type type="Vue"/>
+				</return-types>
+			</method>
+			<method name="$off">
+				<parameters>
+					<parameter name="event" type="String" usage="required"/>
+					<parameter name="callback" type="Function" usage="required"/>
+				</parameters>
+				<return-types>
+					<return-type type="Vue"/>
+				</return-types>
+			</method>
+			<method name="$emit">
+				<parameters>
+					<parameter name="event" type="String" usage="required"/>
+					<parameter name="args" type="Object[]" />
+				</parameters>
+				<return-types>
+					<return-type type="Vue"/>
+				</return-types>
+			</method>
+			<method name="$nextTick">
+				<parameters>
+					<parameter name="callback" type="Function(Vue)" usage="required"/>
+				</parameters>
+			</method>
+
+			<method name="extend" scope="static">
+				<parameters>
+					<parameter name="options" type="ComponentOptions|FunctionalComponentOptions" usage="required"/>
+				</parameters>
+				<return-types>
+					<return-type type="Vue"/>
+				</return-types>
+			</method>
+
+			<method name="nextTick" scope="static">
+				<parameters>
+					<parameter name="callback" type="Function" usage="required"/>
+					<parameter name="context" type="Object[]"/>
+				</parameters>
+				<return-types>
+					<return-type type="Vue"/>
+				</return-types>
+			</method>
+
+			<method name="set" scope="static">
+				<parameters>
+					<parameter name="object" type="Object" usage="required"/>
+					<parameter name="key" type="String"  usage="required"/>
+					<parameter name="value" type="Object" usage="required"/>
+				</parameters>
+				<return-types>
+					<return-type type="Object"/>
+				</return-types>
+			</method>
+
+			<method name="delete" scope="static">
+				<parameters>
+					<parameter name="object" type="Object" usage="required"/>
+					<parameter name="key" type="String"  usage="required"/>
+				</parameters>
+			</method>
+
+			<method name="filter" scope="static">
+				<parameters>
+					<parameter name="id" type="String" usage="required"/>
+					<parameter name="definition" type="Function" />
+				</parameters>
+				<return-types>
+					<return-type type="Function"/>
+				</return-types>
+			</method>
+
+			<method name="component" scope="static">
+				<parameters>
+					<parameter name="id" type="String" usage="required"/>
+					<parameter name="definition" type="Component|AsyncComponent|ComponentOptions" />
+				</parameters>
+				<return-types>
+					<return-type type="Vue"/>
+				</return-types>
+			</method>
+
+			<method name="use" scope="static">
+				<parameters>
+					<parameter name="plugin" type="PluginObject|PluginFunction" usage="required"/>
+					<parameter name="options" type="Object" />
+				</parameters>
+			</method>
+
+			<method name="mixin" scope="static">
+				<parameters>
+					<parameter name="mixin" type="Vue|ComponentOptions" usage="required"/>
+				</parameters>
+			</method>
+			<method name="directive" scope="static">
+				<parameters>
+					<parameter name="id" type="String" usage="required"/>
+					<parameter name="definition" type="DirectiveOptions|DirectiveFunction"/>
+				</parameters>
+				<return-types>
+					<return-type type="DirectiveOptions"/>
+				</return-types>
+			</method>
+			<method name="compile" scope="static">
+				<parameters>
+					<parameter name="template" type="String" usage="required"/>
+				</parameters>
+				<return-types>
+					<return-type type="Vue.compile"/>
+				</return-types>
+			</method>
+		</methods>
+		<properties>
+			<property name="$data" type="Object"/>
+			<property name="$el" type="HTMLElement"/>
+			<property name="$options" type="ComponentOptions"/>
+			<property name="$parent" type="Vue"/>
+			<property name="$root" type="Vue"/>
+			<property name="$children" type="Vue[]"/>
+			<property name="$refs" type="Vue[]|Vue|Element[]|Element"/>
+			<property name="$slots" type="VNode[]"/>
+			<property name="$scopedSlots" type="ScopedSlot"/>
+			<property name="$isServer" type="Boolean"/>
+			<property name="$props" type="Object"/>
+			<property name="$set" type="Vue.set"/>
+			<property name="$delete" type="Vue.delete"/>
+			<property name="$createElement" type="CreateElement"/>
+			<property name="config" type="Vue.config" scope="static"/>
+		</properties>
+	</class>
+</javascript>
