@@ -1,4 +1,0 @@
- instructions.install = \
-    chmod(targetDir:@artifact,targetFile:os/macosx/cocoasudo,permissions:755);
- instructions.install.import= \
-    org.eclipse.equinox.p2.touchpoint.eclipse.chmod
