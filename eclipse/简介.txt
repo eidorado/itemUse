@@ -1,5 +1,0 @@
-安装位置在：C:\Users\Administrator  工作空间：E:\eclipseWorkplace\.metadata\.plugins
-不安装在这个位置会报错
-打开Eclipse根目录eclipse.ini文件，在最前面加上两行：
--vm
-C:\ProgramFiles\Java\jdk1.8.0_45\bin\javaw.exe（这个是你安装的javaw.exe的绝对路径）

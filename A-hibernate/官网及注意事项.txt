@@ -1,3 +1,0 @@
-http://hibernate.org/orm/
-
-hibernate5Ö»Ö§³Öjdk1.8

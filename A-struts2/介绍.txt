@@ -1,4 +1,0 @@
-官网：struts:http://struts.apache.org/   
-下载：http://struts.apache.org/download.cgi
-
-javassist-3.20.0-GA.jar可能会跟hibernate里的重复
